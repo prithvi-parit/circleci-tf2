@@ -8,9 +8,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: terraform init & plan
-      - run:
           command: echo $gcp_cred | cat > sec_gcp.json
+      - run:
+          name: terraform init & plan
           command: |
             terraform init #-input=false
            # terraform plan -out tfapply -var-file variables.tfvars
