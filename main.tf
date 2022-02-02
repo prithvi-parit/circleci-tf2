@@ -3,8 +3,8 @@ provider "google" {
   region      = "asia-south1"
   credentials = "sec_gcp.json"
 }
-resource "google_cloud_run_service" "soil-moistur-staging" {
-  name     = "soil-moisture-staging"
+resource "google_cloud_run_service" "soil-moistur-staging2" {
+  name     = "soil-moisture-staging2"
   location = "asia-south1"
   template {
     spec {
