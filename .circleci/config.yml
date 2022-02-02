@@ -1,0 +1,20 @@
+version: 2
+
+jobs:
+  plan-apply:
+    working_directory: /tmp/project
+    docker:
+      - image: docker.mirror.hashicorp.services/hashicorp/terraform:light
+    steps:
+      - checkout
+      - run:
+          name: terraform init & plan
+      - run:
+          command: echo $gcp_cred | cat > sec_gcp.json
+          command: |
+            terraform init #-input=false
+           # terraform plan -out tfapply -var-file variables.tfvars
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
