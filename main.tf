@@ -30,3 +30,12 @@ resource "google_cloud_run_service" "soil-moistur-staging2" {
   }
   
 }
+
+variable "y"{
+   type=string
+   
+}
+
+output "myvalue2"{
+   value= "hello this is from ${var.y}"
+}
