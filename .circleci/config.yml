@@ -11,6 +11,7 @@ jobs:
           command: echo $gcp_cred | cat > terraform/sec_gcp.json
       - run: 
           command: |
+           rm -rf main.tf
            ls
            ls terraform
            #cat terraform/sec_gcp.json
@@ -23,9 +24,9 @@ jobs:
             #terraform apply -var=y=x_val --auto-approve
            # terraform plan -out tfapply -var-file variables.tfvars
       - persist_to_workspace:
-          root: terraform
+          root: ./terraform
           paths:
-            - .
+            - ./terraform
 workflows:
   version: 2
   build_and_deploy_to_cloudrun:
