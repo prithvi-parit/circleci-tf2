@@ -8,11 +8,11 @@ jobs:
     steps:
       - checkout
       - run:
-          command: echo $gcp_cred | cat > sec_gcp.json
+          command: echo $gcp_cred | cat > terraform/sec_gcp.json
       - run: 
           command: |
            ls
-           #ls terraform
+           ls terraform
            #cat terraform/sec_gcp.json
 
       - run:
