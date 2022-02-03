@@ -20,7 +20,8 @@ jobs:
             terraform plan -var=y=$x_val
             terraform refresh -var=y=$x_val
             ls
-            terraform apply -var=y=$x_val --auto-approve
+            terraform plan -var=y=$x_val
+            #terraform apply -var=y=$x_val --auto-approve
            # terraform plan -out tfapply -var-file variables.tfvars
       - store_artifacts:
           path: terraform.tfstate
