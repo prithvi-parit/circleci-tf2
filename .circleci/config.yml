@@ -12,6 +12,7 @@ jobs:
       - run: 
           command: |
            ls
+           ls terraform
            cat terraform/sec_gcp.json
 
       - run:
