@@ -11,6 +11,7 @@ jobs:
           command: echo $gcp_cred | cat > terraform/sec_gcp.json
       - run: 
           command: |
+           pwd
            rm -rf main.tf
            ls
            ls terraform
