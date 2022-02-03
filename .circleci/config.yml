@@ -9,15 +9,13 @@ jobs:
       - checkout
       - run:
           command: echo $gcp_cred | cat > sec_gcp.json
-      - run:
-          command: export TF_VAR_y=x_val
 
       - run:
           name: terraform init & plan
           command: |
             terraform init #-input=false
             terraform plan
-            terraform apply --auto-approve
+            terraform apply -var=y=x_val --auto-approve
            # terraform plan -out tfapply -var-file variables.tfvars
       - persist_to_workspace:
           root: .
