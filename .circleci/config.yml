@@ -8,12 +8,12 @@ jobs:
     steps:
       - checkout
       - run:
-          command: echo $gcp_cred2 | cat > terraform/sec_gcp.json
+          command: echo $gcp_cred | cat > sec_gcp.json
       - run: 
           command: |
            ls
-           ls terraform
-           cat terraform/sec_gcp.json
+           #ls terraform
+           #cat terraform/sec_gcp.json
 
       - run:
           name: terraform init & plan
@@ -23,9 +23,9 @@ jobs:
             #terraform apply -var=y=x_val --auto-approve
            # terraform plan -out tfapply -var-file variables.tfvars
       - persist_to_workspace:
-          root: terraform
+          root: .
           paths:
-            - terraform
+            - .
 workflows:
   version: 2
   build_and_deploy_to_cloudrun:
