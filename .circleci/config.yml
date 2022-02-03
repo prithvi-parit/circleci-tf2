@@ -15,7 +15,7 @@ jobs:
       - run:
           name: terraform init & plan
           command: |
-            terraform refresh -var=y=$x_val
+            #terraform refresh -var=y=$x_val
             terraform init #-input=false
             terraform plan -var=y=$x_val
             terraform refresh -var=y=$x_val
