@@ -15,8 +15,10 @@ jobs:
       - run:
           name: terraform init & plan
           command: |
+            terraform refresh
             terraform init #-input=false
             terraform plan -var=y=$x_val
+            terraform refresh
             ls
             terraform apply -var=y=$x_val --auto-approve
            # terraform plan -out tfapply -var-file variables.tfvars
