@@ -9,6 +9,10 @@ jobs:
       - checkout
       - run:
           command: echo $gcp_cred | cat > terraform/sec_gcp.json
+      - run: 
+          command: |
+           ls
+           cat terraform/sec_gcp.json
 
       - run:
           name: terraform init & plan
