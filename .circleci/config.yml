@@ -10,6 +10,9 @@ jobs:
       - run:
           command: echo $gcp_cred | cat > sec_gcp.json
       - run:
+          command: export TF_VAR_y=x_val
+
+      - run:
           name: terraform init & plan
           command: |
             terraform init #-input=false
